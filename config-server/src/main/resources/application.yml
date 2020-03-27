@@ -14,11 +14,13 @@ spring:
 
 server:
   port: 8888
+
 management:
   endpoint:
     health:
       enabled: true
       show-details: always
+
 eureka:
   client:
     serviceUrl:
