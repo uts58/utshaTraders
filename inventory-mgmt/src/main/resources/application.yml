@@ -3,3 +3,6 @@ spring:
     config:
       name: inventorymgmt
       uri: http://localhost:8888/
+
+  datasource:
+    initialization-mode: embedded

@@ -1,0 +1,1 @@
+insert into INVENTORY_USER values ( '1', 'Tarun Jyoti Saha', 'tarun', 'tarun');

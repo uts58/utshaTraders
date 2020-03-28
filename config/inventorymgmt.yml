@@ -5,7 +5,14 @@ eureka:
 
 spring:
   application:
-    name: InventoryManagement
+    name: Inventory-Management
+  h2:
+    console:
+      enabled: true
+  datasource:
+    platform: h2
+    url: jdbc:h2:~/inventorymgmt;AUTO_SERVER=TRUE
+    
 server:
   port: 9910
   
