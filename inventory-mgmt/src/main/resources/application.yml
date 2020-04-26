@@ -7,18 +7,27 @@ spring:
   datasource:
     platform: h2
     url: jdbc:h2:~/inventorymgmt;AUTO_SERVER=TRUE
-  thymeleaf:
-    cache: false
+    hikari:
+      connection-init-sql: SELECT 1
+      connection-test-query: SELECT 1
+      auto-commit: true
+      connection-timeout: 3000
+      idle-timeout: 600000
+      leak-detection-threshold: 2000
+      max-lifetime: 1800000
+      maximum-pool-size: 500
+      validation-timeout: 5000
   jpa:
     hibernate:
       ddl-auto: update
-
+#  security:
+#    user:
+#      name: test
+#      password: test
 server:
   port: 9910
-
 management:
   endpoint:
     health:
       enabled: true
       show-details: always
-

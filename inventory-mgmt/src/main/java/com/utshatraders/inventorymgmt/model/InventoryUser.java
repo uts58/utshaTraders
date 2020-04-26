@@ -4,23 +4,31 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class InventoryUser {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(nullable = false)
     private String name;
-    @Column(unique=true)
+
+    @Column(unique=true, nullable = false)
     private String userName;
+
+    @Column(nullable = false)
     private String password;
+
     @CreationTimestamp
     private LocalDateTime createDateTime;
 
     @UpdateTimestamp
     private LocalDateTime updateDateTime;
+
 
     public Long getId() {
         return id;
@@ -69,6 +77,7 @@ public class InventoryUser {
     public void setUpdateDateTime(LocalDateTime updateDateTime) {
         this.updateDateTime = updateDateTime;
     }
+
 
     @Override
     public String toString() {
